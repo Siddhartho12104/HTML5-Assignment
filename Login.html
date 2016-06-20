@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+<head>
+	<title>HTML5 signup</title>
+	<style type="text/css">
+		body
+		{
+			background-color: #e6e6e6;
+		}
+		header
+		{
+			position:relative;
+			left:40px;
+		}
+		h1
+		{
+			color:#004d66;
+			font-family:ariel;
+		}
+		p
+		{
+			color:grey;
+			font-family:ariel;
+		}
+		h3
+		{
+			color:grey;
+			font-family:ariel;
+		}
+		span
+		{
+			color:#004d66;
+		}
+		section
+		{
+			height:400px;
+			width: 587px;
+			float: left;
+			padding:2px;
+			margin: 2px;
+			position: absolute;
+			left:40px;
+		}
+		input
+		{
+			width:550px;
+			height: 30px;
+			border: 1px solid red;
+			border-radius: 5px;
+			margin: 10px;
+			padding:5px;
+		}
+		#button
+		{
+			width:110px;
+			border-radius:0px;
+			border: 2px solid #004d66;
+			font-family:Arial;
+			color:#004d66;
+			background-color: #e6e6e6;
+			font-weight: bold;
+			float:right;
+		}
+	</style>
+	<script type="text/javascript">
+		function validate()
+		{
+			var email=document.getElementById("email").value;
+			var password1=document.getElementById("password1").value;
+			if(sessionStorage.email)
+			{
+				if(sessionStorage.email==email && sessionStorage.password1==password1)
+				{
+					return true;
+				}
+				else
+				{
+					alert("Wrong credentials. Please try again.");
+					return false;
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<header>
+		<h1>Enter the system</h1>
+		<p>Its necessary to login in Your account in order to sign up for a course.</p>
+	</header>
+	<section>
+		<h3>PLEASE LOGIN <span>HERE</span></h3>
+		<form action="content.html" method="post" id="form1" onsubmit="return validate();">
+			<input type="email" placeholder="Email" name="email" maxlength="40" autocomplete required id="email"><br>
+			<input type="password" placeholder="Password" name="password11" required id="password1"><br>
+			<input type="Submit" value="Login" id="button">
+		</form>
+	</section>
+</body>
+</html>
